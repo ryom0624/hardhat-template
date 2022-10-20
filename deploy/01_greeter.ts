@@ -6,19 +6,6 @@ module.exports = async ({ getNamedAccounts, deployments }: any) => {
     from: deployer,
     args: ["Hello"],
     log: true,
-    proxy: {
-      proxyContract: "OpenZeppelinTransparentProxy",
-      execute: {
-        init: {
-          methodName: "initialize",
-          args: [],
-        },
-        onUpgrade: {
-          methodName: "",
-          args: [],
-        },
-      },
-    },
   });
 };
 module.exports.tags = ["Greeter"];

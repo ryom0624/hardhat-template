@@ -6,6 +6,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-ethers";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
+import "hardhat-contract-sizer";
 import "hardhat-deploy";
 import { HardhatUserConfig } from "hardhat/config";
 
@@ -37,6 +38,13 @@ const config: HardhatUserConfig = {
       },
     },
   },
+  contractSizer: {
+    alphaSort: true,
+    disambiguatePaths: false,
+    runOnCompile: true,
+    strict: true,
+  },
+
 };
 
 export default config;
