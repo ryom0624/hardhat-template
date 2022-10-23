@@ -1,4 +1,8 @@
-module.exports = async ({ getNamedAccounts, deployments }: any) => {
+import {HardhatRuntimeEnvironment} from 'hardhat/types';
+import {DeployFunction} from 'hardhat-deploy/types';
+
+const func: DeployFunction = async function(hre: HardhatRuntimeEnvironment) {
+  const {deployments, getNamedAccounts} = hre;
   const { deploy } = deployments;
   const { deployer } = await getNamedAccounts();
 
@@ -8,4 +12,6 @@ module.exports = async ({ getNamedAccounts, deployments }: any) => {
     log: true,
   });
 };
-module.exports.tags = ["Greeter"];
+
+func.tags = ["Greeter"];
+export default func;
